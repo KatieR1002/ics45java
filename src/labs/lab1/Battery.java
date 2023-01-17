@@ -1,0 +1,60 @@
+package labs.lab1;
+
+/**
+ * A rechargeable battery.
+ */
+public class Battery {
+	private double capacity;
+	private double battery;
+	// ADD YOUR INSTANCE VARIABLES HERE
+
+	/**
+	 * Create a battery with specified capacity.
+	 * 
+	 * @param capacity maximum capacity, measured in milliampere hours
+	 */
+	public Battery(double capacity) {
+		this.capacity = capacity;
+		this.battery = capacity;
+		// FILL IN
+	}
+
+	/**
+	 * Drain capacity of the battery by given amount.
+	 * 
+	 * @param amount amount of battery used (assume it will not be > its current
+	 *               capacity
+	 */
+	public void drain(double amount) {
+		this.battery -= amount;
+		// FILL IN
+	}
+
+	/**
+	 * Recharge the battery to maximum capacity.
+	 */
+	public void charge() {
+		battery = capacity;
+		// FILL IN
+	}
+
+	/**
+	 * Retrieve the battery's current capacity.
+	 * 
+	 * @return remaining capacity
+	 */
+	public double getRemainingCapacity() {
+		return this.battery; // FIX ME
+	}
+
+	public static void main(String[] args) {
+		Battery battery = new Battery(100.0);
+		System.out.println(battery.getRemainingCapacity()); // returns 100.
+		battery.drain(23.4);
+		battery.drain(9.7);
+		System.out.println(battery.getRemainingCapacity()); // returns 66.9
+		battery.charge();
+		System.out.println(battery.getRemainingCapacity()); // returns 100.0
+	}
+
+}
